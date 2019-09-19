@@ -26,23 +26,23 @@ class Owner
   end
   
   def cats 
-    Cats.all.select do |cat|
+    Cat.all.select do |cat|
       cat.owner == self
     end
   end
   
   def dogs 
-    Dogs.all.select do |dog|
+    Dog.all.select do |dog|
       dog.owner == self
     end 
   end 
   
   def buy_cat(name)
-    Cats.new(name, self)
+    Cat.new(name, self)
   end 
   
   def buy_dog(name)
-    Dogs.new(name, self)
+    Dog.new(name, self)
   end
   
   def walk_dogs 
