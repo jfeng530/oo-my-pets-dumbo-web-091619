@@ -5,7 +5,7 @@ class Owner
   
   def initialize(name = nil)
     @name = name
-    @species = "Human"
+    @species = "human"
     @@all << self
   end
   
@@ -20,6 +20,10 @@ class Owner
   def self.reset_all
     @@all = []
   end 
+  
+  def say_species
+    puts "I am a human."
+  end
   
   def cats 
     Cats.all.select do |cat|
