@@ -33,10 +33,44 @@ class Owner
     end 
   end 
   
-  def buy_cat
-    Cats.new()
+  def buy_cat(name)
+    Cats.new(name, self)
   end 
   
+  def buy_dog(name)
+    Dogs.new(name, self)
+  end
   
+  def walk_dogs 
+    self.dogs.each do |dog|
+      dog.mood = "happy"
+    end
+  end
+  
+  def feed_cats
+    self.cats.each do |cat|
+      cat.mood = "happy"
+    end
+  end 
+  
+  def sell_pets
+    self.cats.each do |cat|
+      cat.owner = nil 
+    end
+    self.dogs.each do |dog|
+      dog.owner = nil
+    end 
+  end
+  
+  def list_pets
+    all_pets = []
+    self.cats.each do |cat|
+      all_pets << cat
+    end 
+    self.dogs.each do |dog|
+      all_pets << dog 
+    end
+    all_pets 
+  end
   
 end
