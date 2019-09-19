@@ -69,14 +69,7 @@ class Owner
   end
   
   def list_pets
-    all_pets = []
-    self.cats.each do |cat|
-      all_pets << cat
-    end 
-    self.dogs.each do |dog|
-      all_pets << dog 
-    end
-    all_pets 
+    puts "I have #{self.dogs.length}dog(s), and #{self.cats.length}cat(s)."
   end
   
 end
